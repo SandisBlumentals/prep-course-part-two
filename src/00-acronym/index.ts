@@ -8,7 +8,7 @@
 
 function parse(input: string) {
     var acronym:Array<string> = [];
-    var splitName = input.toUpperCase().split((/[\s.?!,_-]+/));
+    var splitName = input.toUpperCase().split((/[\s.?!&^,_-]+/));
     for (var i = 0; i < splitName.length; i++){
         acronym.push(splitName[i][0]);
     }

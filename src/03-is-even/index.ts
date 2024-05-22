@@ -9,6 +9,9 @@
  * isEven(3) === false
  */
 
-function isEven(n: number) {}
+function isEven(n: number) {
+    if (n & 1) return false;
+    else return true; 
+}
 
 export { isEven };

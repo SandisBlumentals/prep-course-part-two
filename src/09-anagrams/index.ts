@@ -1,7 +1,7 @@
 /**
  * Anagrams
  *
- * Return true of false depends on provided strings are anagrams of eachother.
+ * Return true or false - it depends on if provided strings are anagrams of eachother.
  * One string is an anagram of another if it uses the same characters
  * in the same quantity. Only consider characters, not spaces
  * or punctuation. Consider capital letters to be the same as lower case.
@@ -12,6 +12,14 @@
  * anagrams('Hi there', 'Bye there') === false
  */
 
-function anagrams(stringA: string, stringB: string) {}
+function anagrams(stringA: string, stringB: string) {
+    var string1 = stringA.toLowerCase().split((/[\s.?!&^,_-]+/)).join('').toString();
+    var string2 = stringB.toLowerCase().split((/[\s.?!&^,_-]+/)).join('').toString();
+    string1 = string1.split('').sort().join('');
+    string2 = string2.split('').sort().join('');
+    
+    if (string1 === string2) return true;
+        else return false;
+}
 
 export { anagrams };
