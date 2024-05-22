@@ -13,9 +13,20 @@
  */
 
 class Queue {
-  add(n: number) {}
+  items: number[];
+  constructor() {
+    this.items = [];
+  }
 
-  remove() {}
+  add(n: number) {
+    this.items.push(n);
+  }  
+
+  remove() {
+    return this.items.shift();
+  }
 }
+
+// I didnt do this task, because i dont know advanced TS
 
 export { Queue };
