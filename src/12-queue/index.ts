@@ -27,6 +27,6 @@ class Queue {
   }
 }
 
-// I didnt do this task, because i dont know advanced TS
+// I didnt do this task, because i don't know (yet) advanced TS
 
 export { Queue };
