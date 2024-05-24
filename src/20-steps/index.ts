@@ -19,6 +19,12 @@
  *            '####'
  */
 
-function steps(n: number) {}
+function steps(n: number) {
+    for(var i = 1; i <= n; i++){
+        var spaces = ' '.repeat(n - i);
+        var hashTag = '#'.repeat(i);
+        console.log(hashTag + spaces);
+    }
+}
 
 export { steps };
