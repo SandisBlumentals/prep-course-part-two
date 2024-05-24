@@ -15,7 +15,12 @@
  *              ' ### '
  *              '#####'
  */
-
-function pyramid(n: number) {}
+function pyramid(n: number) {
+    for(var i = 1; i <= n; i++){
+        var spaces = ' '.repeat(n-i);
+        var hashTag = '#'.repeat(i * 2 - 1);
+        console.log(spaces + hashTag + spaces);
+    }
+}
 
 export { pyramid };
