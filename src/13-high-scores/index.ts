@@ -11,15 +11,46 @@ class HighScores {
   }
 
   get latest() {
-    return 0;
+    var latestScore = this.scores[this.scores.length-1]
+    return latestScore;
   }
 
   get personalBest() {
-    return 0;
+    var bestValue = 0;
+    for (var i = 0; i < this.scores.length; i++){
+      if (this.scores[i]>=bestValue) {
+        bestValue = this.scores[i];
+      }
+    }
+    return bestValue;
   }
 
   get personalTopThree() {
-    return 0;
+    var firstValue = 0;
+    var secondValue = 0;
+    var thirdValue = 0;
+    for (var i = 0; i < this.scores.length; i++){
+      if (this.scores[i] >= firstValue) {
+        thirdValue = secondValue;
+        secondValue = firstValue;
+        firstValue = this.scores[i];
+      }
+      else if (this.scores[i] >= secondValue) {
+        thirdValue = secondValue;
+        secondValue = this.scores[i];
+      }
+      else if (this.scores[i] >= thirdValue) {
+        thirdValue = this.scores[i];
+      }
+    }
+    switch (this.scores.length) {
+      case 1:
+        return [firstValue];
+      case 2:
+        return [firstValue,secondValue];
+      default:
+        return [firstValue,secondValue,thirdValue];
+    }
   }
 }
 
