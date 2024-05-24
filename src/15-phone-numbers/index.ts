@@ -26,12 +26,31 @@
  *
  * Note: As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
  */
-
 class PhoneNumber {
-  constructor(input: string) {}
+  phoneNum: string;
+  
+  constructor(input: string) {
+    this.phoneNum = input;
+  }
 
   number() {
-    return "";
+    this.phoneNum = this.phoneNum.replace(/\D/g, '');
+    switch (this.phoneNum.length){
+      case 10:
+        if (this.phoneNum[0] == "1" || this.phoneNum[0] == "0" || this.phoneNum[3] == "1" || this.phoneNum[3] == "0"){
+          return null;
+        }
+        break;
+      case 11:
+        if (this.phoneNum[0] != "1" || this.phoneNum[1] == "1" || this.phoneNum[1] == "0" || this.phoneNum[4] == "1" || this.phoneNum[4] == "0"){
+          return null;
+        }
+        break;
+      default:
+        return null;
+    }
+    if (this.phoneNum.length == 11) this.phoneNum = this.phoneNum.replace(this.phoneNum[0],"");
+    return this.phoneNum;
   }
 }
 
