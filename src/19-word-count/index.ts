@@ -10,7 +10,24 @@
  */
 
 class Words {
-  count(str: string) {}
+  
+
+  count(str: string) {
+  
+    const wordCounts: Record<string, number> = {}; // learn about record
+
+    const wordsFromString = str.toLowerCase().split((/[\s,_-]+/));
+    
+    for (const word of wordsFromString) {
+      if (word == "") continue;
+      if (wordCounts[word]) {
+          wordCounts[word]++;
+      } else {
+          wordCounts[word] = 1;
+      }
+  }
+    return wordCounts;
+  }
 }
 
 export { Words };
